@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: linear-gradient(#200016 , #10001f);
+            height: 100vh;
+            font-family:system-ui ;
+            transition: background 0.5s ease;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        header{
+            position: absolute;
+            width: 95%;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px;
+        }
+        header .logo{
+            font-size: 30px;
+            text-transform: uppercase;    
+        }
+        header ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;   
+        }
+        header ul li{
+            margin-right:30px ;  
+        }
+        header ul li a{
+            padding: 6px 15px ;
+        }
+        header ul li a:hover, .active{
+            background: #fff;
+            color: #200016;
+            border-radius: 20px;
+        }
+        .main{
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content:center ;
+            align-items: center;
+            overflow: hidden;
+        }
+        .main::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: 100%; 
+            background: linear-gradient( to top,#200016, transparent);
+        }
+        .main img{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        } 
+        #moon{
+            mix-blend-mode: screen;   
+            transition: transform 1.5s ease-in-out, top 0.1s ease-out; 
+        }
+        .nouvil{
+            color: #fff;
+            font-size: 25px;
+            text-transform:uppercase ;
+            transform: translateY(-140px);
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.1s ease-out, font-size 0.1 ease-out;
+        }
+        .main img, .nouvil{
+            transition: transform 0.1s ease-out, font-size 0.1s ease-out;
+        }
+        .content{
+            color: #fff;
+            padding: 30px;  
+        }
+        .content h2{
+            margin: 20px;
+            font-size: 30px;
+        }
+        .content p{
+            margin: 20px;  
+        }
+        .mode-btn{
+            position: relative;
+            right: 20px;
+            z-index: 100;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            border: none;
+            background: #fff;
+            color: #200016;
+            font-weight: bold;
+            transition: 0.3s;
+            
+        }
+        .day-mode{
+            background: linear-gradient(#87ceeb, #f0f8ff) !important;
+        }
+        .day-mode #moon{
+            transform: translateY(100vh) !important; 
+        }
+        .day-mode #stars {
+            opacity: 0; 
+        }
+        .day-mode .content, .day-mode .nouvil, .day-mode header .logo, .day-mode header ul li a {
+            color: #200016 !important; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <h2><a href="#" class="logo">nouvil</a></h2> 
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Shop</a></li>  
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <button id="modetoggle" class="mode-btn"> تبديل الوضع</button>
+      </ul> 
+    </header>
+    <section class="main">
+        <img src="نجوم.png" id="stars">
+        <h2 class="nouvil">nouvil</h2>
+        <img src="moon2.png" id="moon">
+        <img src="mountains3-1536x864.png" id="mountains3">
+        <img src="mountains4-1536x864.png" id="mountains4">
+        <img src="river5-1536x864.png" id="river">
+        <img src="boat6-1536x864.png" id="boat">
+        <img src="mountains7-1536x864.png" id="mountains7">
+    </section>
+    <div class="content">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias vitae ducimus laborum dolorem quas vel earum est molestiae exercitationem at, corrupti iusto similique voluptatem aspernatur incidunt aut accusamus soluta, laboriosam quo? Neque velit, nemo, ab odit voluptates ipsa similique laborum aspernatur eum inventore nam debitis, in harum tempore repudiandae illo esse. Repellat, sunt expedita error ut ducimus dolores hic culpa commodi neque. Eligendi nobis iste obcaecati ab! Itaque laborum libero aperiam autem nulla quibusdam quia voluptas, dolorem mollitia sit fugiat ea rem molestiae earum labore dicta expedita aliquam dolore dolores odit. Quas neque a minima, possimus laborum ipsam natus obcaecati.</p><br>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias vitae ducimus laborum dolorem quas vel earum est molestiae exercitationem at, corrupti iusto similique voluptatem aspernatur incidunt aut accusamus soluta, laboriosam quo? Neque velit, nemo, ab odit voluptates ipsa similique laborum aspernatur eum inventore nam debitis, in harum tempore repudiandae illo esse. Repellat, sunt expedita error ut ducimus dolores hic culpa commodi neque. Eligendi nobis iste obcaecati ab! Itaque laborum libero aperiam autem nulla quibusdam quia voluptas, dolorem mollitia sit fugiat ea rem molestiae earum labore dicta expedita aliquam dolore dolores odit. Quas neque a minima, possimus laborum ipsam natus obcaecati.</p><br>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias vitae ducimus laborum dolorem quas vel earum est molestiae exercitationem at, corrupti iusto similique voluptatem aspernatur incidunt aut accusamus soluta, laboriosam quo? Neque velit, nemo, ab odit voluptates ipsa similique laborum aspernatur eum inventore nam debitis, in harum tempore repudiandae illo esse. Repellat, sunt expedita error ut ducimus dolores hic culpa commodi neque. Eligendi nobis iste obcaecati ab! Itaque laborum libero aperiam autem nulla quibusdam quia voluptas, dolorem mollitia sit fugiat ea rem molestiae earum labore dicta expedita aliquam dolore dolores odit. Quas neque a minima, possimus laborum ipsam natus obcaecati.</p><br>
+
+
+    </div>
+
+    <script>
+       let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains3 = document.getElementById('mountains3');
+        let mountains4 = document.getElementById('mountains4');
+        let river = document.getElementById('river');
+        let boat = document.getElementById('boat');
+        let nouvil = document.querySelector('.nouvil');
+        let modeToggle = document.getElementById('modetoggle');
+        let body = document.body;
+        let mainSection = document.querySelector('.main'); 
+        modeToggle.onclick = function() {
+            body.classList.toggle('day-mode');
+            
+            if(body.classList.contains('day-mode')) {
+                modeToggle.innerText = "وضع الليل"; 
+                mainSection.style.background = '';
+            } else {
+                modeToggle.innerText = "وضع النهار";
+            }
+        }
+
+        window.onscroll = function(){
+            let value = scrollY;
+            stars.style.left = value + 'px';
+            if(value>20){
+                nouvil.style.opacity='1';
+            }else{
+                nouvil.style.opacity='0';
+            }
+            let dynamicSize=value;
+            if(dynamicSize<25){
+                dynamicSize=25;
+            }
+            
+            if(!body.classList.contains('day-mode')){
+                moon.style.top = value * 4 + 'px';
+                      if(value >= 127){
+                    mainSection.style.background = 'linear-gradient(#376281,#10001f)';
+                } else {
+                    mainSection.style.background = 'linear-gradient(#200016,#10001f)';
+                }
+            }
+
+            mountains3.style.top = value * 2 + 'px';
+            mountains4.style.top = value * 1.5 + 'px';
+            river.style.top = value + 'px';
+            boat.style.left = value * 3 + 'px';
+            nouvil.style.fontSize = value + 'px';
+
+            if(value >= 67){
+                nouvil.style.fontSize = 67 + 'px';
+                nouvil.style.position = 'fixed';
+            }else{
+                nouvil.style.fontSize= value + 'px';
+                nouvil.style.position='relative';
+            }
+            
+            if(value >= 478){
+                nouvil.style.display = 'none';
+            } else {
+                nouvil.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
